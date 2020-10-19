@@ -1,0 +1,15 @@
+upper = 0
+  lower = 0
+  for i in range(0, len(stack)):
+      x, y = calcSlope(smallestXPoint, stack[i])
+      angle = math.atan2(y, x)
+      angle = angle - (2 * math.pi)
+      if(angle == 0):
+          upper += 1
+          lower += 1
+      elif(angle > 0):
+          lower += 1
+      else:
+          upper += 1
+
+  return upper, lower
